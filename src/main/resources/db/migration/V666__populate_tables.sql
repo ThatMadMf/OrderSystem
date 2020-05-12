@@ -12,3 +12,5 @@ VALUES  ('Company #1', 'Address #1', 123456, 'Some dude'),
         ('Company #4', 'Address #4', 123456, 'Some dude'),
         ('Company #5', 'Address #5', 123456, 'Some dude');
 
+INSERT INTO orders (customer_id, product_id, amount, order_date)
+VALUES (1 , 2, 20, current_timestamp);
