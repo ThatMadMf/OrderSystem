@@ -4,3 +4,11 @@ VALUES  (990, 'Product #1'),
         (200, 'Product #3'),
         (100, 'Product #4'),
         (320, 'Product #5');
+
+INSERT INTO customers (name, address, phone, contact_person)
+VALUES  ('Company #1', 'Address #1', 123456, 'Some dude'),
+        ('Company #2', 'Address #2', 123456, 'Some dude'),
+        ('Company #3', 'Address #3', 123456, 'Some dude'),
+        ('Company #4', 'Address #4', 123456, 'Some dude'),
+        ('Company #5', 'Address #5', 123456, 'Some dude');
+
