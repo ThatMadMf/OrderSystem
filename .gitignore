@@ -1,0 +1,10 @@
+.idea
+*.iml
+*.ser
+out/
+build/
+classes/
+.gradle
+
+/main/
+/libs/
