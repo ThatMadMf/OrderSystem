@@ -1,8 +1,5 @@
 package org.example.order;
 
-import org.example.customer.Customer;
-import org.example.product.Product;
-
 import java.util.Date;
 
 public class OrderDto {
@@ -12,6 +9,16 @@ public class OrderDto {
     private int productId;
     private int amount;
     private Date orderDate;
+
+    public OrderDto() {
+    }
+
+    public OrderDto(int customerId, int productId, int amount, Date orderDate) {
+        this.customerId = customerId;
+        this.productId = productId;
+        this.amount = amount;
+        this.orderDate = orderDate;
+    }
 
     public int getId() {
         return id;

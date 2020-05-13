@@ -1,4 +1,4 @@
-package org.example.order;
+package org.example.util;
 
 import org.springframework.core.io.DefaultResourceLoader;
 import org.springframework.core.io.Resource;

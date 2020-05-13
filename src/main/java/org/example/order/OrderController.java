@@ -1,11 +1,11 @@
 package org.example.order;
 
+import org.example.util.SubmitFailedException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import java.util.Date;
 
 @Controller
 @RequestMapping("orders")
@@ -21,5 +21,27 @@ public class OrderController {
     public String getOrders(Model model) {
         model.addAttribute("orders", orderService.getAllOrders());
         return "orders";
+    }
+
+    @GetMapping("new-order")
+    public String newOrder(Model model) {
+        model.addAttribute("orderDto", new OrderDto());
+        return "new-order";
+    }
+
+    @PostMapping("new-order")
+    public String processNewOrder(@ModelAttribute OrderDto orderDto, Model model) {
+        try {
+            orderDto.setOrderDate(new Date());
+
+            orderService.addNewOrder(orderDto);
+            model.addAttribute("success", true);
+
+            return "new-order-result";
+
+        } catch (RuntimeException ex) {
+
+            throw new SubmitFailedException(ex.getMessage());
+        }
     }
 }

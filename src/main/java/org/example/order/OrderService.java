@@ -31,4 +31,8 @@ public class OrderService {
                         x.getOrderDate()))
                 .collect(Collectors.toList());
     }
+
+    public boolean addNewOrder(OrderDto orderDto) {
+        return orderRepository.addNewOrder(orderDto) != 0;
+    }
 }

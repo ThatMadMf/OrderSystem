@@ -1,6 +1,6 @@
 package org.example.customer;
 
-import org.example.order.ResourceReader;
+import org.example.util.ResourceReader;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
