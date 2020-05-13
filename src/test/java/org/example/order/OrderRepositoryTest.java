@@ -2,6 +2,7 @@ package org.example.order;
 
 import org.example.Main;
 import org.example.config.DataBaseConfig;
+import org.example.customer.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
@@ -9,6 +10,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.annotations.Test;
+
+import java.util.List;
 
 import static org.testng.Assert.*;
 
@@ -22,6 +25,13 @@ public class OrderRepositoryTest extends AbstractTestNGSpringContextTests {
 
     @Test
     public void testGetAllOrders() {
-        orderRepository.getAllOrders();
+
+        List<Order> actualResult = orderRepository.getAllOrders();
+
+        assertNotNull(actualResult);
+        assertFalse(actualResult.isEmpty());
+
+        assertNotNull(actualResult.get(0).getCustomer());
+        assertNotNull(actualResult.get(0).getProduct());
     }
 }

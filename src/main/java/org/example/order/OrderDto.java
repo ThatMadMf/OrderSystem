@@ -21,20 +21,20 @@ public class OrderDto {
         this.id = id;
     }
 
-    public Customer getCustomer() {
-        return null;
+    public int getCustomerId() {
+        return customerId;
     }
 
-    public void setCustomer(Customer customer) {
-        this.customerId = 0;
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
     }
 
-    public Product getProduct() {
-        return null;
+    public int getProductId() {
+        return productId;
     }
 
-    public void setProduct(Product product) {
-        this.productId = 0;
+    public void setProductId(int productId) {
+        this.productId = productId;
     }
 
     public int getAmount() {
