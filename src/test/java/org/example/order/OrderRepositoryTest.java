@@ -26,12 +26,9 @@ public class OrderRepositoryTest extends AbstractTestNGSpringContextTests {
     @Test
     public void testGetAllOrders() {
 
-        List<Order> actualResult = orderRepository.getAllOrders();
+        List<OrderDto> actualResult = orderRepository.getAllOrdersDto();
 
         assertNotNull(actualResult);
         assertFalse(actualResult.isEmpty());
-
-        assertNotNull(actualResult.get(0).getCustomer());
-        assertNotNull(actualResult.get(0).getProduct());
     }
 }
