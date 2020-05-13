@@ -1,13 +1,10 @@
 package org.example.order;
 
-import org.example.customer.CustomerRepository;
-import org.example.product.ProductRepository;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Repository
 public class OrderRepository {
@@ -24,7 +21,7 @@ public class OrderRepository {
     }
 
     public List<OrderDto> getAllOrdersDto() {
-       return jdbcTemplate.query(GET_ALL_ORDERS, rowMapper);
+        return jdbcTemplate.query(GET_ALL_ORDERS, rowMapper);
     }
 
     private static String getSql(String fileName) {

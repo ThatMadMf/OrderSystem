@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/orders.css}"/>
+    <title>List of completed orders</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<h1>Company's completed orders: </h1>
+<div class="container">
+    <div th:each="order: ${orders}" class="table">
+        <div class="row">
+            <div class="cell">Order id:</div>
+            <div class="cell" th:text="${order.getId()}"></div>
+        </div>
+
+        <div class="row">
+            <div class="cell">Customer name:</div>
+            <div class="cell" th:text="${order.getCustomer().getName()}"></div>
+        </div>
+
+        <div class="row">
+            <div class="cell">Contact Person:</div>
+            <div class="cell" th:text="${order.getCustomer().getContactPerson()}"></div>
+        </div>
+
+        <div class="row">
+            <div class="cell">Phone number:</div>
+            <div class="cell" th:text="${order.getCustomer().getPhone()}"></div>
+        </div>
+
+        <div class="row">
+            <div class="cell">Address:</div>
+            <div class="cell" th:text="${order.getCustomer().getAddress()}"></div>
+        </div>
+
+        <div class="row">
+            <div class="cell">Product price:</div>
+            <div class="cell" th:text="${order.getProduct().getPrice()}"></div>
+        </div>
+
+        <div class="row">
+            <div class="cell">Product description:</div>
+            <div class="cell" th:text="${order.getProduct().getDescription()}"></div>
+        </div>
+
+        <div class="row">
+            <div class="cell">Amount of purchased products:</div>
+            <div class="cell" th:text="${order.getAmount()}"></div>
+        </div>
+
+
+        <div class="row">
+            <div class="cell">Date of purchase:</div>
+            <div class="cell" th:text="${order.getDate()}"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

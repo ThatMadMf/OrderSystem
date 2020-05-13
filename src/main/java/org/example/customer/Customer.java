@@ -5,8 +5,8 @@ public class Customer {
     private int id;
     private String name;
     private String address;
-    private int phoneNumber;
-    private String contactPersonName;
+    private int phone;
+    private String contactPerson;
 
     public Customer() {
     }
@@ -35,19 +35,19 @@ public class Customer {
         this.address = address;
     }
 
-    public int getPhoneNumber() {
-        return phoneNumber;
+    public int getPhone() {
+        return phone;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setPhone(int phone) {
+        this.phone = phone;
     }
 
-    public String getContactPersonName() {
-        return contactPersonName;
+    public String getContactPerson() {
+        return contactPerson;
     }
 
-    public void setContactPersonName(String contactPersonName) {
-        this.contactPersonName = contactPersonName;
+    public void setContactPerson(String contactPerson) {
+        this.contactPerson = contactPerson;
     }
 }
