@@ -8,11 +8,7 @@ public class Customer {
     private int phoneNumber;
     private String contactPersonName;
 
-    public Customer(String name, String address, int phoneNumber, String contactPersonName) {
-        this.name = name;
-        this.address = address;
-        this.phoneNumber = phoneNumber;
-        this.contactPersonName = contactPersonName;
+    public Customer() {
     }
 
     public int getId() {

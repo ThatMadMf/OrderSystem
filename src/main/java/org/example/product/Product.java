@@ -6,9 +6,7 @@ public class Product {
     private double price;
     private String description;
 
-    public Product(double price, String description) {
-        this.price = price;
-        this.description = description;
+    public Product() {
     }
 
     public int getId() {
