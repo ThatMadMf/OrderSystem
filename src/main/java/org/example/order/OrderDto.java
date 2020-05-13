@@ -3,22 +3,15 @@ package org.example.order;
 import org.example.customer.Customer;
 import org.example.product.Product;
 
-import java.time.LocalDate;
+import java.util.Date;
 
-public class Order {
+public class OrderDto {
 
     private int id;
-    private Customer customer;
-    private Product product;
+    private int customerId;
+    private int productId;
     private int amount;
-    private LocalDate date;
-
-    public Order(Customer customer, Product product, int amount, LocalDate date) {
-        this.customer = customer;
-        this.product = product;
-        this.amount = amount;
-        this.date = date;
-    }
+    private Date orderDate;
 
     public int getId() {
         return id;
@@ -29,19 +22,19 @@ public class Order {
     }
 
     public Customer getCustomer() {
-        return customer;
+        return null;
     }
 
     public void setCustomer(Customer customer) {
-        this.customer = customer;
+        this.customerId = 0;
     }
 
     public Product getProduct() {
-        return product;
+        return null;
     }
 
     public void setProduct(Product product) {
-        this.product = product;
+        this.productId = 0;
     }
 
     public int getAmount() {
@@ -52,11 +45,21 @@ public class Order {
         this.amount = amount;
     }
 
-    public LocalDate getDate() {
-        return date;
+    public Date getOrderDate() {
+        return orderDate;
     }
 
-    public void setDate(LocalDate date) {
-        this.date = date;
+    public void setOrderDate(Date orderDate) {
+        this.orderDate = orderDate;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
     }
 }
