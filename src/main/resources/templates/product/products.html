@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/orders.css}"/>
+    <title>List of completed orders</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+
+<h1>List of company's customers: </h1>
+<a href="/">List of orders</a>
+<a href="/products/new-product">Add new product</a>
+<div class="container">
+    <div th:each="product: ${products}" class="table">
+        <div class="row">
+            <div class="cell">Product id:</div>
+            <div class="cell" th:text="${product.getId()}"></div>
+        </div>
+
+        <div class="row">
+            <div class="cell">Product description:</div>
+            <div class="cell" th:text="${product.getDescription()}"></div>
+        </div>
+
+        <div class="row">
+            <div class="cell">Product price:</div>
+            <div class="cell" th:text="${product.getPrice()}"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
