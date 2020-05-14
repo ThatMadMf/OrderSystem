@@ -8,17 +8,21 @@ public class OrderDto {
     private int customerId;
     private int productId;
     private int amount;
+    private Integer deliveryId;
     private Date orderDate;
 
     public OrderDto() {
     }
 
-    public OrderDto(int customerId, int productId, int amount, Date orderDate) {
+    public OrderDto(int customerId, int productId, int amount, Date orderDate, Integer deliveryId) {
         this.customerId = customerId;
         this.productId = productId;
         this.amount = amount;
         this.orderDate = orderDate;
+        this.deliveryId = deliveryId;
     }
+
+
 
     public int getId() {
         return id;
@@ -58,6 +62,14 @@ public class OrderDto {
 
     public void setOrderDate(Date orderDate) {
         this.orderDate = orderDate;
+    }
+
+    public Integer getDeliveryId() {
+        return deliveryId;
+    }
+
+    public void setDeliveryId(Integer deliveryId) {
+        this.deliveryId = deliveryId;
     }
 
     @Override
