@@ -3,7 +3,10 @@ package org.example.order;
 import org.example.util.SubmitFailedException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.Date;
 
@@ -20,13 +23,13 @@ public class OrderController {
     @GetMapping
     public String getOrders(Model model) {
         model.addAttribute("orders", orderService.getAllOrders());
-        return "orders";
+        return "order/orders";
     }
 
     @GetMapping("new-order")
     public String newOrder(Model model) {
         model.addAttribute("orderDto", new OrderDto());
-        return "new-order";
+        return "order/new-order";
     }
 
     @PostMapping("new-order")
@@ -37,7 +40,7 @@ public class OrderController {
             orderService.addNewOrder(orderDto);
             model.addAttribute("success", true);
 
-            return "new-order-result";
+            return "order/new-order-result";
 
         } catch (RuntimeException ex) {
 

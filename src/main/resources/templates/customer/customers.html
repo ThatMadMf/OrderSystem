@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/orders.css}"/>
+    <title>List of completed orders</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+
+<h1>List of company's customers: </h1>
+<a href="/">List of orders</a>
+<a href="/customers/new-customer">Add new customer</a>
+<div class="container">
+    <div th:each="customer: ${customers}" class="table">
+        <div class="row">
+            <div class="cell">Customer id:</div>
+            <div class="cell" th:text="${customer.getId()}"></div>
+        </div>
+
+        <div class="row">
+            <div class="cell">Customer name:</div>
+            <div class="cell" th:text="${customer.getName()}"></div>
+        </div>
+
+        <div class="row">
+            <div class="cell">Contact Person:</div>
+            <div class="cell" th:text="${customer.getContactPerson()}"></div>
+        </div>
+
+        <div class="row">
+            <div class="cell">Phone number:</div>
+            <div class="cell" th:text="${customer.getPhone()}"></div>
+        </div>
+
+        <div class="row">
+            <div class="cell">Address:</div>
+            <div class="cell" th:text="${customer.getAddress()}"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
