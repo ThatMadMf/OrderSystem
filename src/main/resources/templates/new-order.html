@@ -1,24 +1,42 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/new-order.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/orders.css}"/>
     <title>Add new order</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
 <h1>Add new order: </h1>
 <div class="container">
-    <form action="#" th:action="@{/orders/new-order}" th:object="${orderDto}" method="post">
-        <label>
-            <input type="number" th:field="*{customerId}"/>
-        </label>
-        <label>
-            <input type="number" th:field="*{productId}"/>
-        </label>
-        <label>
-            <input type="number" th:field="*{amount}"/>
-        </label>
-        <input type="submit"/>
+    <form action="#" th:action="@{/new-order}" th:object="${orderDto}" method="post">
+        <div class="table">
+            <div class="row">
+                <div class="cell">
+                    <label> Enter customer id
+                        <input type="number" th:field="*{customerId}"/>
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="cell">
+                    <label> Enter product id
+                        <input type="number" th:field="*{productId}"/>
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="cell">
+                    <label> Enter amount
+                        <input type="number" th:field="*{amount}"/>
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="cell">
+                    <input type="submit"/>
+                </div>
+            </div>
+        </div>
     </form>
 </div>
 </body>
