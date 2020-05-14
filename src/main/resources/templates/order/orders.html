@@ -52,10 +52,25 @@
             <div class="cell" th:text="${order.getAmount()}"></div>
         </div>
 
-
         <div class="row">
             <div class="cell">Date of purchase:</div>
             <div class="cell" th:text="${order.getDate()}"></div>
+        </div>
+
+        <div class="row" th:if="${order.getDelivery() != null}">
+            <div class="cell">Type of delivery:</div>
+            <div class="cell" th:text="${order.getDelivery().getDeliveryName()}"></div>
+        </div>
+
+        <div class="row" th:if="${order.getDelivery() != null}">
+            <div class="cell">Price of delivery:</div>
+            <div class="cell" th:text="${order.getDelivery().getPrice()}"></div>
+        </div>
+
+
+        <div class="row">
+            <div class="cell">Whole payable sum:</div>
+            <div class="cell" th:text="${order.getAmountPayable()}"></div>
         </div>
     </div>
 </div>

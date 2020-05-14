@@ -29,6 +29,7 @@ public class OrderService {
                         x.getId(),
                         customerRepository.getCustomerById(x.getCustomerId()),
                         productRepository.getProductById(x.getProductId()),
+                        orderRepository.getDeliveryById(x.getId()),
                         x.getAmount(),
                         x.getOrderDate()))
                 .collect(Collectors.toList());

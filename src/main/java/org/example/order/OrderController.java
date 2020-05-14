@@ -22,6 +22,7 @@ public class OrderController {
 
     @GetMapping
     public String getOrders(Model model) {
+        Object temp = orderService.getAllOrders();
         model.addAttribute("orders", orderService.getAllOrders());
         return "order/orders";
     }
