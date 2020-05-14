@@ -13,9 +13,14 @@ public class CustomerRepository {
     private static final String RESOURCE_PATH = "sql/customer/";
     private static final String GET_CUSTOMER_BY_ID = getSql("get_customer_by_id.sql");
     private static final String GET_ALL_CUSTOMERS = getSql("get_all_customers.sql");
+    private static final String ADD_NEW_CUSTOMER = getSql("add_new_customer.sql");
 
     private final JdbcTemplate jdbcTemplate;
     private final BeanPropertyRowMapper<Customer> rowMapper;
+
+    private static String getSql(String fileName) {
+        return ResourceReader.getSql(RESOURCE_PATH + fileName);
+    }
 
     public CustomerRepository(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
@@ -30,7 +35,9 @@ public class CustomerRepository {
         return jdbcTemplate.query(GET_ALL_CUSTOMERS, rowMapper);
     }
 
-    private static String getSql(String fileName) {
-        return ResourceReader.getSql(RESOURCE_PATH + fileName);
+    public void addNewCustomer(Customer customer) {
+        jdbcTemplate.update(ADD_NEW_CUSTOMER, customer.getName(), customer.getAddress(), customer.getPhone(),
+                customer.getContactPerson());
     }
+
 }

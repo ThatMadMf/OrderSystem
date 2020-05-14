@@ -11,6 +11,6 @@ public class ExceptionHandlerController {
     public String handleException(Model model) {
 
         model.addAttribute("success", false);
-        return "new-order-result";
+        return "submission-result";
     }
 }

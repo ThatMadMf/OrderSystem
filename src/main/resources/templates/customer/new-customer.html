@@ -6,28 +6,35 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
-<h1>Add new order: </h1>
+<h1>Add new customer: </h1>
 <div class="container">
-    <form action="#" th:action="@{/new-order}" th:object="${orderDto}" method="post">
+    <form action="#" th:action="@{/customers/new-customer}" th:object="${customer}" method="post">
         <div class="table">
             <div class="row">
                 <div class="cell">
-                    <label> Enter customer id
-                        <input type="number" th:field="*{customerId}"/>
+                    <label> Enter customer name:
+                        <input type="text" th:field="*{name}"/>
                     </label>
                 </div>
             </div>
             <div class="row">
                 <div class="cell">
-                    <label> Enter product id
-                        <input type="number" th:field="*{productId}"/>
+                    <label> Enter customer address:
+                        <input type="text" th:field="*{address}"/>
                     </label>
                 </div>
             </div>
             <div class="row">
                 <div class="cell">
-                    <label> Enter amount
-                        <input type="number" th:field="*{amount}"/>
+                    <label> Enter customer phone number:
+                        <input type="number" minlength="8" maxlength="9" th:field="*{phone}"/>
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="cell">
+                    <label> Enter name of company's contact person:
+                        <input type="text" th:field="*{contactPerson}"/>
                     </label>
                 </div>
             </div>
